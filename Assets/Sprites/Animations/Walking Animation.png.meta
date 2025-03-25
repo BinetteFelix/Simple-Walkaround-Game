@@ -58,7 +58,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -69,10 +69,10 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -93,10 +93,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
+    maxTextureSize: 128
+    resizeAlgorithm: 1
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -124,10 +124,10 @@ TextureImporter:
       name: Walking Animation_0
       rect:
         serializedVersion: 2
-        x: 8
+        x: 0
         y: 64
-        width: 16
-        height: 31
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,9 +146,9 @@ TextureImporter:
       name: Walking Animation_1
       rect:
         serializedVersion: 2
-        x: 12
-        y: 32
-        width: 13
+        x: 32
+        y: 64
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -168,10 +168,10 @@ TextureImporter:
       name: Walking Animation_2
       rect:
         serializedVersion: 2
-        x: 38
+        x: 64
         y: 64
-        width: 19
-        height: 29
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,10 +190,10 @@ TextureImporter:
       name: Walking Animation_3
       rect:
         serializedVersion: 2
-        x: 73
-        y: 64
-        width: 14
-        height: 29
+        x: 0
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -212,10 +212,10 @@ TextureImporter:
       name: Walking Animation_4
       rect:
         serializedVersion: 2
-        x: 40
+        x: 32
         y: 32
-        width: 17
-        height: 31
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,9 +234,9 @@ TextureImporter:
       name: Walking Animation_5
       rect:
         serializedVersion: 2
-        x: 44
-        y: 0
-        width: 13
+        x: 64
+        y: 32
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -256,10 +256,10 @@ TextureImporter:
       name: Walking Animation_6
       rect:
         serializedVersion: 2
-        x: 70
-        y: 32
-        width: 19
-        height: 29
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,10 +278,10 @@ TextureImporter:
       name: Walking Animation_7
       rect:
         serializedVersion: 2
-        x: 9
+        x: 32
         y: 0
-        width: 14
-        height: 29
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -300,7 +300,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 9eac69028665595448afd725077e112c
     internalID: 0
     vertices: []
     indices: 
@@ -309,7 +309,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Walking Animation_0: -6016649707914270372
+      Walking Animation_1: -3145961372104026543
+      Walking Animation_2: 8279727690787391654
+      Walking Animation_3: 5604025215206421412
+      Walking Animation_4: -6761550235260416185
+      Walking Animation_5: -5558238887320663174
+      Walking Animation_6: -3086115041739033253
+      Walking Animation_7: -2280680924357214696
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
