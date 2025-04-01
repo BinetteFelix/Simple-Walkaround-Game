@@ -67,19 +67,32 @@ public class Player : NetworkBehaviour
         {
             if (Input.GetAxis("Horizontal") < 0)
             {
+                // Make Sprite Face the Left
                 s_SpriteRenderer.flipX = true;
-                p_Rigidbody.GetComponent<Rigidbody2D>().linearVelocity = new Vector3(-1.5f, 0, 0);
+                // If player clicks space -> player jumps, move player upwards
+                if (Input.GetButtonDown("Jump"))
+                    gameObject.transform.position += new Vector3(0, 5, 0) * Time.deltaTime;
+                // If player only wants to move to the Left, move to the Left
+                else
+                    gameObject.transform.position += new Vector3(-1.5f, 0, 0) * Time.deltaTime;
             }
             else if (Input.GetAxis("Horizontal") > 0)
             {
-                s_SpriteRenderer.flipX = false;
-                p_Rigidbody.GetComponent<Rigidbody2D>().linearVelocity = new Vector3(1.5f, 0, 0);
-            }
-            if (Input.GetButtonDown("Jump"))
-            {
-                p_Rigidbody.GetComponent<Rigidbody2D>().linearVelocity = new Vector3(0, 1.5f, 0);
-            }
+                // Make Sprite Face the right
+                s_SpriteRenderer.flipX = false; 
 
+                // If player clicks space -> player jumps, move player upwards
+                if (Input.GetButtonDown("Jump"))
+                    gameObject.transform.position += new Vector3(0, 5f, 0) * Time.deltaTime;
+                // If player only wants to move to the right, move to the right
+                else
+                    gameObject.transform.position += new Vector3(1.5f, 0, 0) * Time.deltaTime;
+            }
+            
+        }
+        if (Input.GetButtonDown("Jump"))
+        {
+            p_Rigidbody.GetComponent<Rigidbody2D>().linearVelocity = new Vector3(0, 5f, 0);
         }
     }
     [Rpc(SendTo.Server)] // attribute, meta data so other functions know what kind of function this is. 
@@ -89,12 +102,17 @@ public class Player : NetworkBehaviour
         {
             a_Float = 0.6f;
             a_Animator.SetFloat("Speed", a_Float);
+
+            if (Input.GetButtonDown("Jump") && !p_IsDead)
+            {
+                a_Animator.SetTrigger("Jump");
+            }
         }
         else if (Input.GetButtonDown("Jump") && !p_IsDead)
         {
+            a_Float = 0.4f;
             a_Animator.SetTrigger("Jump");
             a_Animator.SetFloat("Speed", a_Float);
-            a_Float = 0.4f;
         }
         else if (p_IsDead)
         {

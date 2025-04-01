@@ -16,6 +16,18 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: fcc717bb408d4024990dbb33c47b37cb, type: 2}
+    - target: {fileID: 657437268325455625, guid: 2d7abca7c79787e4d9390c6a61dd1cb9, type: 3}
+      propertyPath: m_GravityScale
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 657437268325455625, guid: 2d7abca7c79787e4d9390c6a61dd1cb9, type: 3}
+      propertyPath: m_LinearDamping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 657437268325455625, guid: 2d7abca7c79787e4d9390c6a61dd1cb9, type: 3}
+      propertyPath: m_AngularDamping
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 3253627894191757439, guid: 2d7abca7c79787e4d9390c6a61dd1cb9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -62,19 +74,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6916930249120178531, guid: 2d7abca7c79787e4d9390c6a61dd1cb9, type: 3}
       propertyPath: TransitionStateInfoList.Array.size
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6916930249120178531, guid: 2d7abca7c79787e4d9390c6a61dd1cb9, type: 3}
       propertyPath: TransitionStateInfoList.Array.data[0].TriggerNameHash
       value: 646380074
       objectReference: {fileID: 0}
     - target: {fileID: 6916930249120178531, guid: 2d7abca7c79787e4d9390c6a61dd1cb9, type: 3}
+      propertyPath: TransitionStateInfoList.Array.data[1].TransitionIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6916930249120178531, guid: 2d7abca7c79787e4d9390c6a61dd1cb9, type: 3}
       propertyPath: TransitionStateInfoList.Array.data[1].TriggerNameHash
-      value: 646380074
+      value: 125937960
       objectReference: {fileID: 0}
     - target: {fileID: 6916930249120178531, guid: 2d7abca7c79787e4d9390c6a61dd1cb9, type: 3}
       propertyPath: TransitionStateInfoList.Array.data[2].TransitionIndex
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6916930249120178531, guid: 2d7abca7c79787e4d9390c6a61dd1cb9, type: 3}
       propertyPath: TransitionStateInfoList.Array.data[2].TriggerNameHash
@@ -82,11 +98,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6916930249120178531, guid: 2d7abca7c79787e4d9390c6a61dd1cb9, type: 3}
       propertyPath: TransitionStateInfoList.Array.data[3].TransitionIndex
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6916930249120178531, guid: 2d7abca7c79787e4d9390c6a61dd1cb9, type: 3}
       propertyPath: TransitionStateInfoList.Array.data[3].TriggerNameHash
       value: 646380074
+      objectReference: {fileID: 0}
+    - target: {fileID: 6916930249120178531, guid: 2d7abca7c79787e4d9390c6a61dd1cb9, type: 3}
+      propertyPath: TransitionStateInfoList.Array.data[4].TransitionIndex
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6916930249120178531, guid: 2d7abca7c79787e4d9390c6a61dd1cb9, type: 3}
+      propertyPath: TransitionStateInfoList.Array.data[4].TriggerNameHash
+      value: 125937960
+      objectReference: {fileID: 0}
+    - target: {fileID: 6916930249120178531, guid: 2d7abca7c79787e4d9390c6a61dd1cb9, type: 3}
+      propertyPath: TransitionStateInfoList.Array.data[5].TransitionIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6916930249120178531, guid: 2d7abca7c79787e4d9390c6a61dd1cb9, type: 3}
+      propertyPath: TransitionStateInfoList.Array.data[5].TriggerNameHash
+      value: 646380074
+      objectReference: {fileID: 0}
+    - target: {fileID: 6916930249120178531, guid: 2d7abca7c79787e4d9390c6a61dd1cb9, type: 3}
+      propertyPath: TransitionStateInfoList.Array.data[6].TransitionIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6916930249120178531, guid: 2d7abca7c79787e4d9390c6a61dd1cb9, type: 3}
+      propertyPath: TransitionStateInfoList.Array.data[6].TriggerNameHash
+      value: 125937960
       objectReference: {fileID: 0}
     - target: {fileID: 6916930249120178531, guid: 2d7abca7c79787e4d9390c6a61dd1cb9, type: 3}
       propertyPath: TransitionStateInfoList.Array.data[0].DestinationState
@@ -98,11 +138,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6916930249120178531, guid: 2d7abca7c79787e4d9390c6a61dd1cb9, type: 3}
       propertyPath: TransitionStateInfoList.Array.data[1].DestinationState
-      value: 646380074
+      value: 1137391654
       objectReference: {fileID: 0}
     - target: {fileID: 6916930249120178531, guid: 2d7abca7c79787e4d9390c6a61dd1cb9, type: 3}
       propertyPath: TransitionStateInfoList.Array.data[1].OriginatingState
-      value: 1137391654
+      value: 2081823275
       objectReference: {fileID: 0}
     - target: {fileID: 6916930249120178531, guid: 2d7abca7c79787e4d9390c6a61dd1cb9, type: 3}
       propertyPath: TransitionStateInfoList.Array.data[2].DestinationState
@@ -110,7 +150,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6916930249120178531, guid: 2d7abca7c79787e4d9390c6a61dd1cb9, type: 3}
       propertyPath: TransitionStateInfoList.Array.data[2].OriginatingState
-      value: 1744665739
+      value: 1137391654
       objectReference: {fileID: 0}
     - target: {fileID: 6916930249120178531, guid: 2d7abca7c79787e4d9390c6a61dd1cb9, type: 3}
       propertyPath: TransitionStateInfoList.Array.data[3].DestinationState
@@ -118,6 +158,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6916930249120178531, guid: 2d7abca7c79787e4d9390c6a61dd1cb9, type: 3}
       propertyPath: TransitionStateInfoList.Array.data[3].OriginatingState
+      value: 1744665739
+      objectReference: {fileID: 0}
+    - target: {fileID: 6916930249120178531, guid: 2d7abca7c79787e4d9390c6a61dd1cb9, type: 3}
+      propertyPath: TransitionStateInfoList.Array.data[4].DestinationState
+      value: 1137391654
+      objectReference: {fileID: 0}
+    - target: {fileID: 6916930249120178531, guid: 2d7abca7c79787e4d9390c6a61dd1cb9, type: 3}
+      propertyPath: TransitionStateInfoList.Array.data[4].OriginatingState
+      value: 1744665739
+      objectReference: {fileID: 0}
+    - target: {fileID: 6916930249120178531, guid: 2d7abca7c79787e4d9390c6a61dd1cb9, type: 3}
+      propertyPath: TransitionStateInfoList.Array.data[5].DestinationState
+      value: 646380074
+      objectReference: {fileID: 0}
+    - target: {fileID: 6916930249120178531, guid: 2d7abca7c79787e4d9390c6a61dd1cb9, type: 3}
+      propertyPath: TransitionStateInfoList.Array.data[5].OriginatingState
+      value: -526601997
+      objectReference: {fileID: 0}
+    - target: {fileID: 6916930249120178531, guid: 2d7abca7c79787e4d9390c6a61dd1cb9, type: 3}
+      propertyPath: TransitionStateInfoList.Array.data[6].DestinationState
+      value: 1137391654
+      objectReference: {fileID: 0}
+    - target: {fileID: 6916930249120178531, guid: 2d7abca7c79787e4d9390c6a61dd1cb9, type: 3}
+      propertyPath: TransitionStateInfoList.Array.data[6].OriginatingState
       value: -526601997
       objectReference: {fileID: 0}
     - target: {fileID: 6916930249120178531, guid: 2d7abca7c79787e4d9390c6a61dd1cb9, type: 3}
@@ -126,7 +190,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6916930249120178531, guid: 2d7abca7c79787e4d9390c6a61dd1cb9, type: 3}
       propertyPath: TransitionStateInfoList.Array.data[1].TransitionDuration
-      value: 0.25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6916930249120178531, guid: 2d7abca7c79787e4d9390c6a61dd1cb9, type: 3}
       propertyPath: TransitionStateInfoList.Array.data[2].TransitionDuration
@@ -134,6 +198,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6916930249120178531, guid: 2d7abca7c79787e4d9390c6a61dd1cb9, type: 3}
       propertyPath: TransitionStateInfoList.Array.data[3].TransitionDuration
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6916930249120178531, guid: 2d7abca7c79787e4d9390c6a61dd1cb9, type: 3}
+      propertyPath: TransitionStateInfoList.Array.data[5].TransitionDuration
       value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 7196948954529840413, guid: 2d7abca7c79787e4d9390c6a61dd1cb9, type: 3}
