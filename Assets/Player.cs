@@ -8,11 +8,15 @@ using UnityEngine;
 public class Player : NetworkBehaviour
 {
     public static Player Instance;
-    Animator a_Animator;
-    float a_Float;
+    private Animator a_Animator;
     private Rigidbody2D p_Rigidbody;
     private SpriteRenderer s_SpriteRenderer;
     public bool p_IsDead = false;
+    private bool _IsGrounded;
+    public bool p_IsMoving;
+    private float a_Float;
+    private Vector3 DistanceFromGround;
+    private Vector3 MinHeightforJump = new Vector3(0, -0.39f, 0);
 
     public NetworkVariable<Vector2> Position = new NetworkVariable<Vector2>();
 
@@ -63,6 +67,10 @@ public class Player : NetworkBehaviour
     [Rpc(SendTo.Server)] // attribute, meta data so other functions know what kind of function this is. 
     void SubmitPositionRequestServerRpc(RpcParams rpcParams = default)
     {
+        DistanceFromGround = new Vector3(0, transform.position.y, 0);
+        p_IsMoving = (p_Rigidbody.GetComponent<Rigidbody2D>().linearVelocityY < -0.15f | p_Rigidbody.GetComponent<Rigidbody2D>().linearVelocityY > 0.15f);
+        _IsGrounded = (Vector3.Distance(DistanceFromGround, MinHeightforJump) <= 1f & !p_IsMoving);
+
         if (Input.GetButton("Horizontal") && !p_IsDead)
         {
             if (Input.GetAxis("Horizontal") < 0)
@@ -70,29 +78,36 @@ public class Player : NetworkBehaviour
                 // Make Sprite Face the Left
                 s_SpriteRenderer.flipX = true;
                 // If player clicks space -> player jumps, move player upwards
-                if (Input.GetButtonDown("Jump"))
-                    gameObject.transform.position += new Vector3(0, 5, 0) * Time.deltaTime;
+                if (Input.GetButtonDown("Jump") && _IsGrounded)
+                {
+                    p_Rigidbody.GetComponent<Rigidbody2D>().linearVelocityY = 5.0f;
+                }
                 // If player only wants to move to the Left, move to the Left
                 else
-                    gameObject.transform.position += new Vector3(-1.5f, 0, 0) * Time.deltaTime;
+                    p_Rigidbody.GetComponent<Rigidbody2D>().linearVelocityX = -1.5f;
+                    //gameObject.transform.position += new Vector3(-1.5f, 0, 0) * Time.fixedDeltaTime;
             }
             else if (Input.GetAxis("Horizontal") > 0)
             {
                 // Make Sprite Face the right
-                s_SpriteRenderer.flipX = false; 
+                s_SpriteRenderer.flipX = false;
 
                 // If player clicks space -> player jumps, move player upwards
-                if (Input.GetButtonDown("Jump"))
-                    gameObject.transform.position += new Vector3(0, 5f, 0) * Time.deltaTime;
+                if (Input.GetButtonDown("Jump") && _IsGrounded)
+                {
+                    p_Rigidbody.GetComponent<Rigidbody2D>().linearVelocityY = 5.0f;
+                }
                 // If player only wants to move to the right, move to the right
                 else
-                    gameObject.transform.position += new Vector3(1.5f, 0, 0) * Time.deltaTime;
+                    p_Rigidbody.GetComponent<Rigidbody2D>().linearVelocityX = 1.5f;
+                //gameObject.transform.position += new Vector3(1.5f, 0, 0) * Time.fixedDeltaTime;
             }
             
         }
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && _IsGrounded)
         {
-            p_Rigidbody.GetComponent<Rigidbody2D>().linearVelocity = new Vector3(0, 5f, 0);
+            p_Rigidbody.GetComponent<Rigidbody2D>().linearVelocityY = 5.0f;
+            //gameObject.transform.position += new Vector3(0, 4f, 0) * Time.fixedDeltaTime;
         }
     }
     [Rpc(SendTo.Server)] // attribute, meta data so other functions know what kind of function this is. 
@@ -103,12 +118,12 @@ public class Player : NetworkBehaviour
             a_Float = 0.6f;
             a_Animator.SetFloat("Speed", a_Float);
 
-            if (Input.GetButtonDown("Jump") && !p_IsDead)
+            if (Input.GetButtonDown("Jump") && !p_IsDead && _IsGrounded)
             {
                 a_Animator.SetTrigger("Jump");
             }
         }
-        else if (Input.GetButtonDown("Jump") && !p_IsDead)
+        else if (Input.GetButtonDown("Jump") && !p_IsDead && _IsGrounded)
         {
             a_Float = 0.4f;
             a_Animator.SetTrigger("Jump");
