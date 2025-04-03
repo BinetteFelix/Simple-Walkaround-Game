@@ -101,8 +101,7 @@ public class Player : NetworkBehaviour
                 else
                     p_Rigidbody.GetComponent<Rigidbody2D>().linearVelocityX = 1.5f;
                 //gameObject.transform.position += new Vector3(1.5f, 0, 0) * Time.fixedDeltaTime;
-            }
-            
+            }  
         }
         if (Input.GetButtonDown("Jump") && _IsGrounded)
         {
